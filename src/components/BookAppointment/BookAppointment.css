@@ -1,0 +1,300 @@
+/* src/components/BookAppointment/BookAppointment.css */
+
+/* === GLOBAL PAGE STYLES === */
+.book-appointment-page {
+ padding: 20px 40px;
+ max-width: 1200px;
+ margin: 0 auto;
+ font-family: Arial, sans-serif;
+}
+
+.book-appointment-page h1 {
+ font-size: 28px;
+ margin-bottom: 5px;
+ color: #333;
+}
+
+.book-appointment-page .doctor-list-container {
+ margin-top: 20px;
+}
+
+/* === SPECIALIZATION FILTER TABS === */
+.specialization-filter-tabs {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 10px;
+ margin: 20px 0 30px 0;
+ padding-bottom: 10px;
+}
+
+.specialization-filter-tabs button {
+ padding: 10px 15px;
+ border: 1px solid #ccc;
+ border-radius: 8px;
+ cursor: pointer;
+ font-size: 14px;
+ transition: all 0.2s ease;
+ min-width: 100px;
+}
+
+.specialization-filter-tabs .filter-inactive {
+ background-color: #fff;
+ color: #555;
+ border-color: #e0e0e0;
+}
+
+.specialization-filter-tabs .filter-inactive:hover {
+ background-color: #f0f0f0;
+}
+
+.specialization-filter-tabs .filter-active {
+ /* Primary blue color */
+ background-color: #007bff; 
+ color: white;
+ border-color: #007bff;
+ font-weight: bold;
+}
+
+/* === DOCTOR CARD STYLES (BookAppointmentCard.jsx) === */
+.doctor-card {
+ border: 1px solid #e0e0e0;
+ border-radius: 12px;
+ padding: 20px;
+ margin-bottom: 15px;
+ background-color: #fff;
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+ display: flex;
+ flex-direction: column;
+ gap: 15px;
+}
+
+.card-header {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
+
+.card-header .initials {
+ height: 50px;
+ width: 50px;
+ border-radius: 50%;
+ background-color: #4CAF50; /* Green background for initials */
+ color: white;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-size: 18px;
+ font-weight: bold;
+ flex-shrink: 0;
+ margin-right: 15px;
+}
+
+.card-header .info {
+ flex-grow: 1;
+}
+
+.card-header h3 {
+ margin: 0 0 5px 0;
+ font-size: 18px;
+ color: #007bff;
+}
+
+.card-header p {
+ margin: 0;
+ font-size: 14px;
+ color: #666;
+}
+
+.card-header .experience {
+ font-size: 12px;
+ color: #999;
+}
+
+.card-header .actions {
+ display: flex;
+ flex-direction: column;
+ align-items: flex-end;
+ flex-shrink: 0;
+ margin-left: 20px;
+}
+
+.card-header .rating {
+ font-size: 14px;
+ color: #ffa400; /* Star color */
+ margin-bottom: 8px;
+}
+
+.card-header .book-btn {
+ background-color: #007bff;
+ color: white;
+ border: none;
+ padding: 8px 15px;
+ border-radius: 6px;
+ cursor: pointer;
+ font-weight: bold;
+ transition: background-color 0.2s;
+}
+
+.card-header .book-btn:hover {
+ background-color: #0056b3;
+}
+
+/* === SLOT DISPLAY (On Doctor Card) === */
+.card-slots p {
+ font-weight: bold;
+ color: #333;
+ margin-bottom: 10px;
+ font-size: 14px;
+}
+
+.card-slots .slot-list {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 8px;
+}
+
+.card-slots .slot-chip {
+ background-color: #e0f7fa; /* Light blue chip background */
+ color: #007bff;
+ padding: 6px 10px;
+ border-radius: 4px;
+ font-size: 13px;
+ border: 1px solid #b2ebf2;
+}
+
+
+/* === MULTI-STEP FORM STYLES (Steps 2 & 3) === */
+.appointment-step-container {
+ background-color: #fff;
+ padding: 30px;
+ border-radius: 12px;
+ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+ max-width: 600px;
+ margin: 40px auto;
+}
+
+.appointment-step-container h2 {
+ border-bottom: 2px solid #e0e0e0;
+ padding-bottom: 15px;
+ margin-top: 0;
+ margin-bottom: 25px;
+}
+
+.appointment-step-container label {
+ display: block;
+ font-weight: bold;
+ margin-top: 15px;
+ margin-bottom: 5px;
+ color: #333;
+}
+
+.appointment-step-container input[type="date"],
+.appointment-step-container select,
+.appointment-step-container textarea {
+ width: 100%;
+ padding: 10px;
+ border: 1px solid #ccc;
+ border-radius: 6px;
+ box-sizing: border-box;
+ font-size: 16px;
+ margin-bottom: 10px;
+}
+
+.appointment-step-container textarea {
+ min-height: 100px;
+ resize: vertical;
+}
+
+/* Slot Selection Buttons (Step 2) */
+.slot-selection-area {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 10px;
+ margin-bottom: 20px;
+}
+
+/* MODIFIED SLOT BUTTON STYLES (Clean/Hover Effect) */
+.slot-selection-area .slot-btn {
+ padding: 10px 15px;
+ /* Ensure a consistent width for better layout */
+ min-width: 120px; 
+ text-align: center;
+ 
+ border: 1px solid #ccc; /* Default light gray border */
+ border-radius: 6px;
+ background-color: #f7f7f7; /* Default light background */
+ color: #333; /* Dark text color */
+ 
+ cursor: pointer;
+ transition: all 0.2s ease-in-out; 
+ font-size: 16px; 
+}
+
+.slot-selection-area .slot-btn:hover:not(.selected) {
+ /* Hover: Next button blue border + subtle shadow */
+ border-color: #17a2b8; /* Info blue color */
+ background-color: #fff; 
+ box-shadow: 0 0 5px rgba(23, 162, 184, 0.5); 
+}
+
+.slot-selection-area .slot-btn.selected {
+ /* Selected: Next Button's blue background */
+ background-color: #17a2b8; 
+ color: white;
+ border-color: #17a2b8;
+ font-weight: bold;
+}
+
+/* Navigation and Submission Buttons */
+.next-btn, .confirm-btn {
+ width: 100%;
+ padding: 12px;
+ margin-top: 20px;
+ border: none;
+ border-radius: 6px;
+ font-size: 18px;
+ font-weight: bold;
+ cursor: pointer;
+ transition: background-color 0.2s;
+}
+
+.next-btn {
+ background-color: #17a2b8; /* Info blue */
+ color: white;
+}
+
+.next-btn:hover:not(:disabled) {
+  background-color: #138496;
+}
+
+.confirm-btn { 
+    background-color: #007bff; /* Primary blue */ color: white;
+}
+
+.confirm-btn:hover:not(:disabled) {
+ background-color: #0056b3;
+}
+
+.confirm-btn:disabled {
+ background-color: #cccccc;
+ cursor: not-allowed;
+}
+
+.back-btn {
+ background: none;
+ border: none;
+ color: #007bff;
+ cursor: pointer;
+ font-size: 14px;
+ margin-bottom: 20px;
+ padding: 0;
+ display: block;
+}
+
+/* Confirmation Summary (Step 3) */
+.summary-details p {
+    font-size: 16px;
+    margin: 8px 0;
+    padding: 5px;
+    border-bottom: 1px dashed #eee;
+}

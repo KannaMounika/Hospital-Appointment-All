@@ -1,0 +1,136 @@
+/* PatientPortal/PatientDashboard.css */
+
+/* Define custom variables for color consistency */
+:root {
+    --medi-brand-green: #00796b; 
+    --medi-accent-green: #2e7d32; 
+    --bg-light-green: #e8f5e9; 
+    --text-dark: #333;
+    --text-muted: #666;
+    --border-light: #e0e0e0;
+    --primary-blue: #007bff; 
+}
+
+/* Staff/Patient Layout Container */
+.dashboard {
+    /* Ensures content is centered and takes up a reasonable width */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.dashboard-content {
+    padding: 20px 0;
+}
+
+/* --- 1. Summary Cards Section (Matching StaffDashboard 4-column grid) --- */
+.summary-cards {
+    display: grid;
+    /* This sets the 4-column structure seen in the staff dashboard */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.summary-cards .card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    height: 100%; 
+    border: 1px solid var(--border-light);
+}
+
+.summary-cards .icon {
+    font-size: 2.5rem;
+}
+
+.summary-cards .card p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.summary-cards .card h3 {
+    margin: 5px 0 2px 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.summary-cards .card small {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* Specific styling for the patient Health Score card */
+.summary-cards .health-card {
+    background-color: var(--bg-light-green); 
+    border-color: #c8e6c9; 
+}
+
+/* --- 2. Quick Actions Section (Matching StaffDashboard 3-column grid) --- */
+.quick-actions h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    color: var(--text-dark);
+}
+
+.quick-actions .icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.actions {
+    display: grid;
+    /* This sets the 3-column structure seen in the staff dashboard quick actions */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+}
+
+.action-btn {
+    background-color: white;
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease-in-out;
+}
+
+.action-btn:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    border-color: var(--medi-accent-green);
+}
+
+.action-btn .icon { /* Changed from .action-icon to .icon for Lucide consistency */
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--medi-accent-green); 
+    display: block;
+}
+
+.action-btn span {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.action-btn small {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* Color Classes for Icons */
+.text-primary { color: var(--primary-blue) !important; }
+.text-success { color: var(--medi-accent-green) !important; }
+.text-info { color: #17a2b8 !important; }

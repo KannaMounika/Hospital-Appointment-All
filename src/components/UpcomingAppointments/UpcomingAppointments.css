@@ -1,0 +1,289 @@
+/* src/components/Appointments/UpcomingAppointments.css */
+
+/* === GLOBAL PAGE CONTAINER STYLES === */
+.modal-overlay {
+    /* Full-screen positioning */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    /* Make it transparent-black and on top of everything */
+    background: rgba(0, 0, 0, 0.6); 
+    z-index: 1000; /* Must be high! */
+    
+    /* Center the content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto; /* Allows scrolling if content is too tall */
+}
+
+/* --- CRITICAL MODAL CONTENT STYLES --- */
+.modal-content {
+    background: white; /* Must have a background color! */
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px; /* Limits the size */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    
+    /* Animation (optional but nice) */
+    transform: translateY(-20px);
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+.appointments-page-container {
+    padding: 20px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    position: relative; /* Needed for absolute positioning of top-right button */
+}
+
+.appointments-page-container h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333; /* Darker tone for headings */
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+/* === Top-Right Book Appointment Button === */
+.book-top-right-btn {
+    position: absolute;
+    top: 40px; /* Adjust as needed */
+    right: 40px; /* Adjust as needed */
+    background-color: #007bff; /* Primary Blue */
+    color: white;
+    border: none;
+    padding: 8px 18px; /* Smaller padding for a compact button */
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px; /* Smaller font size */
+    font-weight: bold;
+    transition: background-color 0.2s;
+    z-index: 10; /* Ensure it's above other elements */
+}
+
+.book-top-right-btn:hover {
+    background-color: #0056b3;
+}
+
+
+/* === NO APPOINTMENTS SECTION === */
+.no-appointments-box {
+    text-align: center;
+    padding: 50px;
+    border: 2px dashed #e0e0e0;
+    border-radius: 10px;
+    background-color: #fcfcfc; /* Lighter background */
+    margin-top: 30px;
+    color: #555;
+}
+
+.no-appointments-box p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.book-first-btn { /* This is the button inside the 'no appointments' box */
+    background-color: #007bff; /* Primary Blue */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.book-first-btn:hover {
+    background-color: #0056b3;
+}
+
+
+/* === Upcoming Appointments Section Heading === */
+.upcoming-appointments-section h2 {
+    font-size: 24px;
+    color: #555;
+    margin-top: 40px; /* Space from previous sections/header */
+    margin-bottom: 20px;
+    padding-left: 5px; /* Small indent for alignment */
+    /* Add a subtle underline if desired: border-bottom: 1px solid #f0f0f0; */
+}
+
+/* === APPOINTMENTS LIST (Horizontal Layout) === */
+.appointments-list {
+    display: flex; /* Use flexbox for horizontal layout */
+    flex-wrap: wrap; /* Allow cards to wrap to the next line if space runs out */
+    gap: 20px; /* Space between cards */
+    margin-top: 20px;
+    justify-content: flex-start; /* Align items to the start of the container */
+}
+
+
+/* === APPOINTMENT CARD STYLES (AppointmentCard.jsx) === */
+.appointment-card {
+    flex: 0 0 auto; /* Don't grow, don't shrink, take auto width */
+    width: 350px; /* Fixed width for each card, adjust as per Figma */
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); /* Softer shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex; /* Flex container for content inside card */
+    flex-direction: column;
+    justify-content: space-between; /* Pushes footer to bottom */
+}
+
+.appointment-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.card-content {
+    flex-grow: 1; /* Allows content to take available space */
+}
+
+.card-header-main { /* Renamed for clarity vs. Figma 'card-header' */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 15px;
+}
+
+.doctor-info-header h3 {
+    margin: 0;
+    font-size: 20px; /* Slightly larger name */
+    color: #333;
+}
+
+.doctor-info-header .specialization {
+    font-size: 14px;
+    color: #007bff; /* Primary Blue */
+    font-weight: bold;
+    margin-top: 3px;
+}
+
+.appointment-status {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Status Specific Colors */
+.status-confirmed, .status-scheduled { /* Assuming 'Confirmed' is similar to Figma's 'Upcoming' */
+    background-color: #28a745; /* Success Green for confirmed/scheduled */
+}
+.status-pending {
+    background-color: #ffc107; /* Warning Yellow */
+    color: #333;
+}
+.status-completed {
+    background-color: #6c757d; /* Secondary Gray */
+}
+.status-cancelled {
+    background-color: #dc3545; /* Danger Red */
+}
+
+
+.appointment-details {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.appointment-details span {
+    display: flex; /* For icon alignment */
+    align-items: center;
+    gap: 5px;
+}
+
+/* Icons for Date and Time */
+.appointment-details .icon {
+    /* You'd replace this with actual SVG/FontAwesome icons in React */
+    /* For now, a placeholder */
+    font-size: 16px; 
+    color: #6c757d; /* Gray icon color */
+}
+
+
+.chief-complaint-section {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #f8f9fa;
+    border-left: 4px solid #007bff; /* Blue accent bar */
+    border-radius: 4px;
+}
+
+.chief-complaint-section strong {
+    font-size: 14px;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.chief-complaint-section p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* === CARD ACTIONS (View Details Button) === */
+.card-actions {
+    margin-top: 25px; /* More space from complaint section */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.view-details-btn {
+    background-color: #17a2b8; /* Info Blue - matches Figma "Book Appointment" if that's the primary action */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.view-details-btn:hover {
+    background-color: #138496;
+}

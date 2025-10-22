@@ -1,0 +1,103 @@
+/* PatientPortal/PatientNavbar.css */
+
+/* Custom brand color */
+:root {
+    --patient-brand-green: #00796b;
+    --patient-light-green: #e0f2f1;
+    --patient-text-dark: #333;
+}
+
+/* Base Navbar Styling */
+.patient-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background-color: white;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    margin-left: 20px;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Logo (Re-used from PatientDashboard.css) */
+.patient-navbar .logo {
+    background-color: var(--patient-brand-green);
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Link Styling */
+.patient-link, .patient-active {
+    text-decoration: none;
+    color: var(--patient-text-dark);
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Active Link */
+.patient-active {
+    color: var(--patient-brand-green);
+    border-bottom: 3px solid var(--patient-brand-green);
+    font-weight: 600;
+}
+
+.patient-link:hover {
+    background-color: #f5f5f5;
+    color: var(--patient-brand-green);
+}
+
+/* Sign Out Button */
+.patient-signout-btn {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    color: #555;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+.patient-signout-btn:hover {
+    border-color: var(--patient-brand-green);
+    color: var(--patient-brand-green);
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    line-height: 1.2;
+}
+.profile-info span {
+    font-size: 0.9rem;
+}
+.profile-info small {
+    font-size: 0.75rem;
+}

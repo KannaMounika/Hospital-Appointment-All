@@ -1,0 +1,98 @@
+/* 1. Reduce the global font size for the form card */
+.card {
+    /* Set a slightly smaller base font size for the entire form */
+    font-size: 0.9rem;
+    padding: initial;
+}
+
+/* 2. Make the specific form elements smaller */
+.form-label {
+    /* Make the labels slightly smaller and ensure they are dark */
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 0.3rem;
+}
+
+.form-control, .form-select, .input-group-text {
+    /* Reduce the height and font size of the inputs themselves */
+    font-size: 0.9rem;
+    padding: 0.4rem 0.75rem;
+    height: calc(1.5em + 0.8rem + 2px);
+}
+
+/* Incorporate the user's requested header class (register-header) */
+.register-header {
+    /* Ensure the header content is centered */
+    text-align: center; 
+    margin-bottom: 1.5rem; /* Standard space below the header */
+}
+
+/* Custom Branding for the 'M' logo */
+.logo {
+  background-color: #00665c; /* The main green color */
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Makes it round */
+  margin-right: 10px; /* Separates from text */
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* FIX APPLIED HERE: Centering the logo and title unit */
+.logo-and-title {
+  display: flex;         /* Make children (logo and h1) display inline */
+  align-items: center;   /* Vertically align them */
+  justify-content: center; /* Center items if the container is wide (using Bootstrap's text-center on parent usually handles this, but explicitly centering here helps) */
+  margin: 0 auto;        /* Use auto margins to center the entire flex container block */
+  margin-bottom: 0;      /* Remove bottom margin, spacing is handled by the parent .register-header or the surrounding elements */
+}
+
+.title.text-success.fs-4.fw-bold {
+    /* Adjust margin for the MediTrack title */
+    margin-bottom: 0 !important; 
+    margin-top: 0 !important; 
+    line-height: 1; 
+}
+
+/* Adjusted size for 'Create Your Account' */
+.create-account-title {
+    font-size: 1.2rem !important; /* Smaller size */
+    font-weight: 600 !important; /* Slightly less bold */
+    margin-top: 10px !important; /* Adjusted top spacing */
+    margin-bottom: 5px !important; /* Adjusted bottom spacing */
+    color: #00665c!important;
+}
+
+
+.subtitle.text-muted {
+    font-size: 0.8rem !important; /* Ensure consistent subtitle size */
+    margin-top: 0 !important; 
+    line-height: 1.3;
+}
+
+/* Back Button Styling */
+.back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: #555;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+}
+.back-button:hover {
+  color: #00796b;
+}
+.back-icon {
+  font-size: 20px;
+  margin-right: 8px;
+}
