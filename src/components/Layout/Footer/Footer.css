@@ -1,0 +1,89 @@
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #000000;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+.footer-left, .footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-item img {
+  width: 16px;
+  height: 16px;
+}
+
+.footer-trust img {
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-subscribe form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.footer-subscribe input {
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex: 1;
+}
+
+.footer-subscribe button {
+  padding: 0.4rem 0.8rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.footer-subscribe button:hover {
+  background-color: #218838;
+}
+
+.footer-social a img {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+}
+
+.footer-bottom {
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #666;
+}
